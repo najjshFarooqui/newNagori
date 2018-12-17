@@ -16,11 +16,6 @@ public interface ItemDao {
     @Query("delete  from item")
     void deleteAll();
 
-    @Query("select distinct oem from item ")
-    List<String> getOem();
-
-    @Query("select * from item where oem=:oem")
-    void getParts(String oem);
 
 
     @Query("select max(id) from Item limit 1 ")
