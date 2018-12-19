@@ -17,10 +17,13 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".ItemListActivity" />
+        <activity android:name=".CompanyListActivity" />
         <activity android:name=".DetailsActivity" />
         <activity android:name=".Copyright" />
-        <activity android:name=".About"></activity>
+        <activity android:name=".About" />
+        <activity android:name=".HomeActivity" />
+        <activity android:name=".PartsInfoActivity" />
+        <activity android:name=".ServiceInfoActivity"></activity>
     </application>
 
 </manifest>

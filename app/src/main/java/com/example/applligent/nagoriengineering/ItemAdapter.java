@@ -52,7 +52,7 @@ public class ItemAdapter extends RecyclerView.Adapter<ItemAdapter.ItemHolder> {
                 public void onClick(View v) {
                     Item item = items.get(getAdapterPosition());
                     Intent intent = new Intent(itemView.getContext(), DetailsActivity.class);
-                    intent.putExtra("arg_item_id", item.id);
+                    intent.putExtra("oem", item.id);
                     itemView.getContext().startActivity(intent);
                 }
             });

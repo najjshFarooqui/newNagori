@@ -13,7 +13,7 @@ import android.view.MenuItem;
 
 import com.example.applligent.nagoriengineering.databinding.ActivityItemListBinding;
 
-public class ItemListActivity extends AppCompatActivity {
+public class CompanyListActivity extends AppCompatActivity {
     ActivityItemListBinding binding;
     ItemDao itemDao;
     DrawerLayout drawerLayout;
@@ -34,7 +34,7 @@ public class ItemListActivity extends AppCompatActivity {
                 menuItem.setChecked(true);
                 drawerLayout.closeDrawers();
                 if (menuItem.getItemId() == R.id.nav_home) {
-                    Intent intent = new Intent(getApplicationContext(), ItemListActivity.class);
+                    Intent intent = new Intent(getApplicationContext(), CompanyListActivity.class);
                     startActivity(intent);
 
                 } else if (menuItem.getItemId() == R.id.nav_copyright) {

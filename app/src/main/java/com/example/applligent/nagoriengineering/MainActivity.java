@@ -22,7 +22,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         itemDao = MyNagoriApplication.getDatabase().itemDao();
         readCsv();
-        startActivity(new Intent(this, ItemListActivity.class));
+        startActivity(new Intent(this, CompanyListActivity.class));
 
     }
 
