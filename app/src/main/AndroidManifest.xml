@@ -18,7 +18,9 @@
             </intent-filter>
         </activity>
         <activity android:name=".ItemListActivity" />
-        <activity android:name=".DetailsActivity"></activity>
+        <activity android:name=".DetailsActivity" />
+        <activity android:name=".Copyright" />
+        <activity android:name=".About"></activity>
     </application>
 
 </manifest>
