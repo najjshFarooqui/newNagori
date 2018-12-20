@@ -27,6 +27,6 @@ public class PartsInfoActivity extends AppCompatActivity {
     protected void onResume() {
         super.onResume();
         item = itemDao.get(partsId);
-        //binding.setStudent(student);
+        binding.setStudent(item);
     }
 }

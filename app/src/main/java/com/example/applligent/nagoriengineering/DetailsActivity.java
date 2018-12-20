@@ -21,6 +21,7 @@ public class DetailsActivity extends AppCompatActivity {
     ActivityDetailsBinding binding;
     TextView oem, telPartNumber, engine, application, mrp;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -28,6 +29,7 @@ public class DetailsActivity extends AppCompatActivity {
         binding = DataBindingUtil.setContentView(this, R.layout.activity_details);
         itemId = getIntent().getIntExtra("oem", -1);
         itemDao = MyNagoriApplication.getDatabase().itemDao();
+        //drawer code
         NavigationView navigationView = findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
             @Override
@@ -52,6 +54,7 @@ public class DetailsActivity extends AppCompatActivity {
                 return true;
             }
         });
+        //
         binding.parts.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -71,11 +74,10 @@ public class DetailsActivity extends AppCompatActivity {
             }
         });
     }
-
     @Override
     protected void onResume() {
         super.onResume();
         item = itemDao.get(itemId);
-        //binding.setItem(item);
+        binding.setItem(item);
     }
 }

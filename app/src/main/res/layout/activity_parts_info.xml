@@ -1,11 +1,41 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout>
 
-    <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:background="#E0FFFF"
         tools:context=".PartsInfoActivity">
 
-    </android.support.constraint.ConstraintLayout>
+        <TableLayout
+            android:background="#00FFFF"
+            android:layout_marginTop="40dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TableRow
+                android:background="#E0FFFF">
+                <TextView
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:text="PART NO"/>
+
+                <TextView
+                    android:text="Description"
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:layout_marginLeft="80dp"/>
+
+                <TextView
+                    android:text="Mrp"
+                    android:layout_height="wrap_content"
+                    android:layout_width="match_parent"
+                    android:layout_marginLeft="80dp"/>
+            </TableRow>
+        </TableLayout>
+
+    </RelativeLayout>
 </layout>

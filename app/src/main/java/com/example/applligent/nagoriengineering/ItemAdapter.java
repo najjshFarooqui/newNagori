@@ -51,7 +51,7 @@ public class ItemAdapter extends RecyclerView.Adapter<ItemAdapter.ItemHolder> {
                 @Override
                 public void onClick(View v) {
                     Item item = items.get(getAdapterPosition());
-                    Intent intent = new Intent(itemView.getContext(), DetailsActivity.class);
+                    Intent intent = new Intent(itemView.getContext(), CompanyDetailsActivity.class);
                     intent.putExtra("oem", item.id);
                     itemView.getContext().startActivity(intent);
                 }
@@ -59,6 +59,7 @@ public class ItemAdapter extends RecyclerView.Adapter<ItemAdapter.ItemHolder> {
         }
 
         protected void bindTo(Item items) {
+
             companyName.setText(items.oem);
         }
     }

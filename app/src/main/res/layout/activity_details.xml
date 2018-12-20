@@ -7,80 +7,132 @@
             name="item"
             type="com.example.applligent.nagoriengineering.Item" />
     </data>
-<android.support.v4.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/drawer_layout"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:fitsSystemWindows="true"
-    tools:context=".DetailsActivity">
 
-    <RelativeLayout
+    <android.support.v4.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/drawer_layout"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:fitsSystemWindows="true"
+        tools:context=".DetailsActivity">
 
-        <TextView
-            android:id="@+id/oem"
+        <RelativeLayout
+            android:background="#00FFFF"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+        <TableLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginLeft="16dp"
             android:layout_marginTop="40dp"
-            android:text="@{item.oem}" />
+            android:layout_marginRight="16dp"
+            android:background="#E0FFFF">
+
+            <TableRow android:layout_marginTop="4dp">
+
+                <TextView
+                    android:textSize="16sp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="TEL PART Number" />
+
+                <TextView
+                    android:textSize="16sp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="80dp"
+                    android:text="@{item.telPartNumber}" />
+            </TableRow>
+
+            <TableRow android:layout_marginTop="4dp">
+
+                <TextView
+                    android:textSize="16sp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="OEM PART NO" />
+
+                <TextView
+                    android:textSize="16sp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="80dp"
+                    android:text="@{item.oem}" />
+            </TableRow>
 
 
-        <TextView
-            android:id="@+id/telPartNumber"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/oem"
-            android:layout_marginTop="32dp"
-            android:text="@{``+item.mrp}" />
+            <TableRow>
 
-        <TextView
-            android:id="@+id/engine"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/telPartNumber"
-            android:layout_marginTop="32dp"
-            android:text="@{item.telPartNumber}" />
+                <TextView
+                    android:textSize="16sp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Engine" />
 
-        <TextView
-            android:id="@+id/application"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/engine"
-            android:layout_marginTop="32dp"
-            android:text="@{item.engine}" />
-
-        <TextView
-            android:id="@+id/mrp"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/application"
-            android:layout_marginTop="32dp"
-            android:text="@{item.application}" />
-
-        <Button
-            android:id="@+id/parts"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/application"
-            android:layout_alignParentEnd="true"
-            android:layout_marginTop="58dp"
-            android:layout_marginEnd="70dp"
-            android:text="parts info" />
-
-        <Button
-            android:id="@+id/service"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/application"
-            android:layout_alignParentStart="true"
-            android:layout_marginStart="70dp"
-            android:layout_marginTop="58dp"
-            android:text="service info" />
+                <TextView
+                    android:textSize="16sp"
+                    android:text="@{item.engine}" />
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:layout_marginLeft="80dp"/>
+            </TableRow>
 
 
+            <TableRow
+                android:layout_marginTop="4dp">
+
+                <TextView
+                    android:textSize="16sp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Application" />
+
+                <TextView
+                    android:textSize="16sp"
+                    android:text="@{item.application}" />
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:layout_marginLeft="80dp"
+            </TableRow>
+
+
+            <TableRow>
+
+                <TextView
+                    android:textSize="16sp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="MRP" />
+
+                <TextView
+                    android:id="@+id/mrpTextView"
+                    android:textSize="16sp"
+                    android:text="@{item.mrp}"
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:layout_marginLeft="80dp" />
+            </TableRow>
+
+
+        </TableLayout>
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_marginTop="224dp"
+                android:layout_marginEnd="65dp"
+                android:text="Service info" />
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginStart="65dp"
+                android:layout_marginTop="224dp"
+                android:text=" parts info" />
     </RelativeLayout>
 
     <android.support.design.widget.NavigationView
