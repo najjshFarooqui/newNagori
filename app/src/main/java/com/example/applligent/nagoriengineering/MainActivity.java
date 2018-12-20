@@ -40,18 +40,18 @@ public class MainActivity extends AppCompatActivity {
 
                 // Read the data and store it in the WellData POJO.
                 Item items = new Item();
-                items.sNo = Long.parseLong(tokens[0]);
-                items.oem = (tokens[1]);
-                items.telPartNumber = tokens[2];
-                items.engine = (tokens[3]);
-                items.application = (tokens[4]);
-                items.mrp = Float.parseFloat(tokens[5]);
-                items.orientationAlpha = Integer.parseInt(tokens[6]);
-                items.orientationBeta = Integer.parseInt(tokens[7]);
+                items.sNo = Long.parseLong(tokens[0].trim());
+                items.oem = (tokens[1].trim());
+                items.telPartNumber = tokens[2].trim();
+                items.engine = (tokens[3].trim());
+                items.application = (tokens[4].trim());
+                items.mrp = Float.parseFloat(tokens[5].trim());
+                items.orientationAlpha = Integer.parseInt(tokens[6].trim());
+                items.orientationBeta = Integer.parseInt(tokens[7].trim());
                 try {
-                    items.strPre = (tokens[8]);
-                    items.settingPre = (tokens[9]);
-                    items.lift = (tokens[10]);
+                    items.strPre = (tokens[8].trim());
+                    items.settingPre = (tokens[9].trim());
+                    items.lift = (tokens[10].trim());
                 } catch (Exception e) {
                     e.printStackTrace();
                 }

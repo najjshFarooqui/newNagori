@@ -21,11 +21,11 @@ public class CompanyListActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_item_list);
-        itemDao = MyNagoriApplication.getDatabase().itemDao();
         binding = DataBindingUtil.setContentView(this, R.layout.activity_item_list);
-        RecyclerView recyclerView = (RecyclerView) findViewById(R.id.recyclerView);
+        itemDao = MyNagoriApplication.getDatabase().itemDao();
         binding.recyclerView.setLayoutManager(new LinearLayoutManager(this));
+        binding.recyclerView.setAdapter(new ItemAdapter(itemDao.getAll()));
+
         NavigationView navigationView = findViewById(R.id.nav_view);
         drawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
         navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
@@ -40,23 +40,17 @@ public class CompanyListActivity extends AppCompatActivity {
                 } else if (menuItem.getItemId() == R.id.nav_copyright) {
                     Intent intent = new Intent(getApplicationContext(), Copyright.class);
                     startActivity(intent);
-
-
                 } else if (menuItem.getItemId() == R.id.nav_about) {
                     Intent intent = new Intent(getApplicationContext(), About.class);
                     startActivity(intent);
-
                 } else if (menuItem.getItemId() == R.id.nav_exit) {
                     Intent intent = new Intent(Intent.ACTION_MAIN);
                     intent.addCategory(Intent.CATEGORY_HOME);
                     intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                     startActivity(intent);
                 }
-
-
                 return true;
             }
         });
-
     }
 }
